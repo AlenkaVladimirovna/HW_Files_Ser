@@ -10,69 +10,69 @@ public class Main {
 
 
         File src = new File(dirl, "src");
-        if(src.mkdir())
+        if (src.mkdir())
             builder.append("Каталог src создан");
 
         File res = new File(dirl, "res");
-        if(res.mkdir())
+        if (res.mkdir())
             builder.append("Каталог res создан");
 
         File savegames = new File(dirl, "savegames");
-        if(savegames.mkdir())
+        if (savegames.mkdir())
             builder.append("Каталог savegames создан");
 
         File temp = new File(dirl, "temp");
-        if(temp.mkdir())
+        if (temp.mkdir())
             builder.append("Каталог temp создан");
 
         File main = new File(src, "main");
-        if(main.mkdir())
+        if (main.mkdir())
             builder.append("Каталог main создан");
 
         File test = new File(src, "test");
-        if(test.mkdir())
+        if (test.mkdir())
             builder.append("Каталог test создан");
 
         File myMain = new File(main, "Main.java");
-        try{
-            if(myMain.createNewFile())
+        try {
+            if (myMain.createNewFile())
                 builder.append("Файл Main.java созан");
 
-        }catch(IOException e){
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
         File myUtils = new File(main, "Utils.java");
-        try{
-            if(myUtils.createNewFile())
+        try {
+            if (myUtils.createNewFile())
                 builder.append("Файл Utils.java создан");
-        }catch(IOException e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
         File drawables = new File(res, "drawables");
-        if(drawables.mkdir())
+        if (drawables.mkdir())
             builder.append("Каталог drawables создан");
 
         File vectors = new File(res, "vectors");
-        if(vectors.mkdir())
+        if (vectors.mkdir())
             builder.append("Каталог vectors создан");
 
         File icons = new File(res, "icons");
-        if(icons.mkdir())
+        if (icons.mkdir())
             builder.append("Каталог icons создан");
 
         File myTemp = new File(temp, "temp.txt");
-        try{
-            if(myTemp.createNewFile())
+        try {
+            if (myTemp.createNewFile())
                 builder.append("Файл temp.txt создан");
-        }catch(IOException e){
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        try(FileWriter writer = new FileWriter("temp.txt")){
+        try (FileWriter writer = new FileWriter("temp.txt")) {
             writer.write(builder.toString());
             writer.flush();
-        }catch(IOException e){
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
